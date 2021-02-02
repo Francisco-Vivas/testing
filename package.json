@@ -1,0 +1,14 @@
+{
+  "name": "endavaTest",
+  "version": "1.0.0",
+  "description": "\"Test for the endava position\"",
+  "main": "index.js",
+  "author": "\"Francisco Javier Vivas Astudillo\"",
+  "license": "MIT",
+  "dependencies": {
+    "selenium-webdriver": "^4.0.0-alpha.8"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}

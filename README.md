@@ -9,5 +9,5 @@ $ yarn # or $ npm install
 To execute the test, run
 ```shell
 $ yarn test
-$ npm test
+$ npm run test
 ```

@@ -79,7 +79,7 @@ describe("Executing test for SDEiT position at Endava", () => {
     expect(cartCount).toBe("2");
   });
 
-  it("should multiply by 2 the subtotal of the shopping cart", async () => {
+  it("the subtotal should be the equal to the quantity and price of the selected book in the shopping cart", async () => {
     const toTheCart = "#hlb-view-cart-announce";
     await driver.wait(until.elementLocated(By.css(toTheCart)), 10000);
     await driver.findElement(By.css(toTheCart)).click();
@@ -96,8 +96,12 @@ describe("Executing test for SDEiT position at Endava", () => {
     await driver.wait(until.elementLocated(By.css(priceSelector)), 10000);
     const price = await driver.findElement(By.css(priceSelector)).getText();
 
+    const quantity = await driver
+      .findElement(By.css("span[class='a-dropdown-prompt']"))
+      .getText();
+
     expect(parseFloat(subtotal.replace(/\$/g, ""))).toBe(
-      parseFloat(price.replace(/\$/g, "")) * 2
+      parseFloat(price.replace(/\$/g, "")) * parseFloat(quantity)
     );
   });
 });
